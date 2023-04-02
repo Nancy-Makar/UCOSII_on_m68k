@@ -1,0 +1,36 @@
+uCOS-II
+
+Files specifically for IDE68K / 68000
+
+app_cfg.h
+os_boot.asm
+os_cpu_a.asm
+os_fcpu_a.asm
+os_cpu_c.c
+os_fcpu_c.c
+os_cfg.h
+os_cpu.h
+
+These files are distributed with IDE68K
+
+Files that must be downloaded from Micrium
+
+os_cfg_r.h
+ucos_ii.h
+os_core.c
+os_dbg_r.c
+os_flag.c
+os_mbox.c
+os_mem.c
+os_mutex.c
+os_q.c
+os_sem.c
+os_task.c
+os_time.c
+ucos_ii.c
+
+
+File OS_FLAG.C:
+
+line 124 change " wait_type &= ~OS_FLAG_CONSUME; " to " wait_type &= (INT8U)~OS_FLAG_CONSUME; "
+
