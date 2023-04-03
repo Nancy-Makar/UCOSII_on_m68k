@@ -41,9 +41,9 @@ extern "C" {
 *********************************************************************************************************
 */
 
-#include <app_cfg.h>
-#include <os_cfg.h>
-#include <os_cpu.h>
+#include "app_cfg.h"
+#include "os_cfg.h"
+#include "os_cpu.h"
 
 /*
 *********************************************************************************************************
@@ -95,7 +95,7 @@ extern "C" {
 
 #define  OS_TCB_RESERVED        ((OS_TCB *)1)
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                             TASK STATUS (Bit definition for OSTCBStat)
@@ -338,7 +338,7 @@ extern "C" {
 
 #define OS_ERR_NO_MORE_ID_AVAIL       150u
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                         EVENT CONTROL BLOCK
@@ -412,7 +412,7 @@ typedef struct os_flag_node {               /* Event Flag Wait List Node        
 } OS_FLAG_NODE;
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                        MESSAGE MAILBOX DATA
@@ -456,7 +456,7 @@ typedef struct os_mem_data {
 } OS_MEM_DATA;
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                   MUTUAL EXCLUSION SEMAPHORE DATA
@@ -527,7 +527,7 @@ typedef struct os_stk_data {
 } OS_STK_DATA;
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                         TASK CONTROL BLOCK
@@ -598,7 +598,7 @@ typedef struct os_tcb {
 #endif
 } OS_TCB;
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                          TIMER DATA TYPES
@@ -637,7 +637,7 @@ typedef  struct  os_tmr_wheel {
 } OS_TMR_WHEEL;
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                          GLOBAL VARIABLES
@@ -733,7 +733,7 @@ OS_EXT  OS_TMR_WHEEL      OSTmrWheelTbl[OS_TMR_CFG_WHEEL_SIZE];
 
 extern  INT8U   const     OSUnMapTbl[256];          /* Priority->Index    lookup table                 */
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                          FUNCTION PROTOTYPES
@@ -937,7 +937,7 @@ INT8U         OSMutexQuery            (OS_EVENT        *pevent,
 
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                      MESSAGE QUEUE MANAGEMENT
@@ -997,7 +997,7 @@ INT8U         OSQQuery                (OS_EVENT        *pevent,
 
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                        SEMAPHORE MANAGEMENT
@@ -1042,7 +1042,7 @@ void          OSSemSet                (OS_EVENT        *pevent,
 
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                           TASK MANAGEMENT
@@ -1117,7 +1117,7 @@ void          OSTaskRegSet            (INT8U            prio,
                                        INT8U           *perr);
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                           TIME MANAGEMENT
@@ -1210,7 +1210,7 @@ void          OSStatInit              (void);
 
 INT16U        OSVersion               (void);
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                      INTERNAL FUNCTION PROTOTYPES
@@ -1299,7 +1299,7 @@ INT8U         OS_TCBInit              (INT8U            prio,
 void          OSTmr_Init              (void);
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                          FUNCTION PROTOTYPES
@@ -1337,7 +1337,7 @@ void          OSTCBInitHook           (OS_TCB          *ptcb);
 void          OSTimeTickHook          (void);
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                          FUNCTION PROTOTYPES
@@ -1379,7 +1379,7 @@ void          OSIntCtxSw              (void);
 void          OSCtxSw                 (void);
 #endif
 
-/*$PAGE*/
+/*$PAGE*/
 /*
 *********************************************************************************************************
 *                                   LOOK FOR MISSING #define CONSTANTS
