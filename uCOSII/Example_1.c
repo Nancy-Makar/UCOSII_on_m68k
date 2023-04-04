@@ -53,10 +53,19 @@ void main(void)
 */
 void Task1(void *pdata)
 {
+static int count = 0;
+    char msb, mid, lsb;
     for (;;)
     {
         printf("This is Task #1\n");
-        OSTimeDly(30);
+        OSTimeDly(15);
+        msb = (count >> 16) & 0xff;
+        mid = (count >> 8) & 0xff;
+        lsb = count & 0xff;
+        HEX_A = lsb;
+        HEX_B = mid;
+        HEX_C = msb;
+        count++;
     }
 }
 /*
@@ -83,9 +92,18 @@ void Task3(void *pdata)
 }
 void Task4(void *pdata)
 {
+    static int countA = 0;
+    static int countB = 0;
     for (;;)
     {
         printf("............This is Task #4\n");
+        if (countA > 256) {
+             countA = 0;
+             PortB = countB++;
+        }
+
+        PortA = countA++;
+
         OSTimeDly(50);
     }
 }
